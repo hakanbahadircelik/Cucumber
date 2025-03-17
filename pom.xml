@@ -28,6 +28,7 @@
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
             <version>7.9.0</version>                        <!-- NEEDS TO BE SAME VERSION OF IO.CUCUMBER  -->
+            <scope>test</scope>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.testng/testng -->
@@ -43,6 +44,7 @@
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-testng</artifactId>
             <version>7.9.0</version>                         <!-- NEEDS TO BE SAME VERSION OF CUCUMBER  -->
+            <scope>test</scope>
         </dependency>
 
         <!--         settings -> add -> Cucumber for Java -> install       -->
