@@ -45,8 +45,8 @@
             <version>7.9.0</version>                         <!-- NEEDS TO BE SAME VERSION OF CUCUMBER  -->
         </dependency>
 
-        <!--         settings -> add -> Cucumber for Java -> insatall       -->
-        <!--         settings -> add -> Gherkin Language -> insatall       -->
+        <!--         settings -> add -> Cucumber for Java -> install       -->
+        <!--         settings -> add -> Gherkin Language -> install       -->
 
     </dependencies>
 
