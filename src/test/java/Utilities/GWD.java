@@ -21,4 +21,23 @@ public class GWD {
         return driver;
     }
 
+    public static void quitDriver() {
+
+        // wait a little bit on the result
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+        // close driver
+        if (driver != null) {  //  work 1 time at First
+            driver.quit();
+            driver = null;
+        }
+
+
+    }
+
+
 }
