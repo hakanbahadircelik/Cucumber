@@ -12,9 +12,11 @@ public class GWD {
 
     public static WebDriver getDriver() {
 
-        driver = new ChromeDriver();  //  jenkins : start without head, work on memory
-        driver.manage().window().maximize(); // makes fullScreen
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20)); // loading page wait till 30sec, or ERROR
+        if (driver == null) {  //  work 1 time at First
+            driver = new ChromeDriver();
+            driver.manage().window().maximize();
+            driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20)); // loading page wait till 30sec, or ERROR
+        }
 
         return driver;
     }
