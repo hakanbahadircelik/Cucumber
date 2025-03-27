@@ -50,13 +50,18 @@
         <!--         settings -> add -> Cucumber for Java -> install       -->
         <!--         settings -> add -> Gherkin Language -> install       -->
 
-<!--        slf4j destroyer         -->
+        <!--        slf4j destroyer         -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
             <version>2.0.16</version>
         </dependency>
 
+        <dependency>  <!--  Random veriable creation  -->
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.12.0</version>
+        </dependency>
 
 
     </dependencies>
