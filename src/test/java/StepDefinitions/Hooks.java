@@ -8,7 +8,7 @@ public class Hooks {
 
     @Before
     public void before(){
-        System.out.println("scenario started ");
+//        System.out.println("scenario started ");
     }
 
     @After

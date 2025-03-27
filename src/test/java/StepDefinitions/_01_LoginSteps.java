@@ -20,12 +20,16 @@ public class _01_LoginSteps {
     @When("Enter username and password click login button")
     public void enter_username_and_password_click_login_button() {
 
-        WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(20));
-        wait.until(ExpectedConditions.visibilityOf(dc.username));
+//        WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(20));
+//        wait.until(ExpectedConditions.visibilityOf(dc.username));
+//
+//        dc.username.sendKeys("turkeyts");
+//        dc.password.sendKeys("Techno2025.%");
+//        dc.loginBtn.click();
 
-        dc.username.sendKeys("turkeyts");
-        dc.password.sendKeys("Techno2025.%");
-        dc.loginBtn.click();
+        dc.click(dc.loginBtn);
+        dc.sendKeys(dc.username,"turkeyts");
+        dc.sendKeys(dc.password,"Techno2025.%");
     }
 
     @Then("User should login successfully")
