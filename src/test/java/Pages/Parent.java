@@ -2,7 +2,9 @@ package Pages;
 
 import Utilities.GWD;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -34,6 +36,8 @@ public class Parent {
     public void verifyContainsText(WebElement element, String txt) {
         wait.until(ExpectedConditions.visibilityOf(element));
         Assert.assertTrue(element.getText().toLowerCase().contains(txt.toLowerCase()));
+        // we need to 'esc' with action to get out from there
+        new Actions(GWD.getDriver()).sendKeys(Keys.ESCAPE).build().perform();
     }
 
 }
