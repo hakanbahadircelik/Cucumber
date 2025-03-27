@@ -6,10 +6,12 @@ import io.cucumber.java.en.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import java.time.Duration;
 
 public class _01_LoginSteps {
+
     DialogContent dc = new DialogContent();
 
     @Given("Navigate to Campus")
@@ -27,14 +29,20 @@ public class _01_LoginSteps {
 //        dc.password.sendKeys("Techno2025.%");
 //        dc.loginBtn.click();
 
-        dc.sendKeys(dc.username, "turkeyts");
-        dc.sendKeys(dc.password, "Techno2025.%");
-        dc.click(dc.loginBtn);
+        dc.mySendKeys(dc.username, "turkeyts");
+        dc.mySendKeys(dc.password, "Techno2025.%");
+        dc.myClick(dc.loginBtn);
     }
 
     @Then("User should login successfully")
     public void user_should_login_successfully() {
-        System.out.println("web site is opened tested");
+
+        WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(20));
+        wait.until(ExpectedConditions.visibilityOf(dc.txtInternship));
+
+        Assert.assertTrue(dc.txtInternship.getText()
+                .toLowerCase().contains("internship"));
+
     }
 
 }
