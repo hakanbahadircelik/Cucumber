@@ -25,7 +25,7 @@ public class GWD {
 
         // wait a little bit on the result
         try {
-            Thread.sleep(5000);
+            Thread.sleep(3000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
