@@ -3,12 +3,6 @@ package StepDefinitions;
 import Pages.DialogContent;
 import Utilities.GWD;
 import io.cucumber.java.en.*;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
-
-import java.time.Duration;
 
 public class _01_LoginSteps {
 
@@ -36,7 +30,7 @@ public class _01_LoginSteps {
 
     @Then("User should login successfully")
     public void user_should_login_successfully() {
-        dc.verifyText(dc.txtInternship,"internship");
+        dc.verifyContainsText(dc.txtInternship,"internship");
     }
 
 }

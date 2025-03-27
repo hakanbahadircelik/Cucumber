@@ -31,7 +31,7 @@ public class Parent {
         js.executeScript("arguments[0].scrollIntoView();", element);
     }
 
-    public void verifyText(WebElement element, String txt) {
+    public void verifyContainsText(WebElement element, String txt) {
         wait.until(ExpectedConditions.visibilityOf(element));
         Assert.assertTrue(element.getText().toLowerCase().contains(txt.toLowerCase()));
     }
