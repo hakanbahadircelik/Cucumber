@@ -30,16 +30,18 @@ public class DialogContent extends Parent{
     @FindBy(xpath = "//span[text()='Internship']")
     public WebElement txtInternship;
 
-    @FindBy(xpath = "")
+    // this locator can be usable on every navbar sites because the
+    // addButton has 'ADD' inside of locator, so it's usable on all the therms
+    @FindBy(xpath = "//ms-add-button[contains(@tooltip,'ADD')]//button")
     public WebElement addBtn;
 
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//ms-text-field[@formcontrolname='name]//input")
     public WebElement nameInput;
 
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//ms-text-field[@formcontrolname='code']//input")
     public WebElement codeInput;
 
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//ms-save-button[@class='ng-star-inserted']//button")
     public WebElement saveBtn;
 
     @FindBy(xpath = "")
