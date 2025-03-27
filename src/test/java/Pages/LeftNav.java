@@ -12,13 +12,13 @@ public class LeftNav extends Parent{
         //  owner of the page, no need to findElement anymore.
     }
 
-    @FindBy(xpath = "")
+    @FindBy(xpath = "(//span[text()='Setup'])[1]")
     public WebElement setup;
 
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//span[text()='Parameters']")
     public WebElement parameters;
 
-    @FindBy(xpath = "")
+    @FindBy(xpath = "(//span[text()='Countries'])[1]")
     public WebElement countries;
 
 }

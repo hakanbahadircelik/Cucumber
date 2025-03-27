@@ -35,7 +35,7 @@ public class DialogContent extends Parent{
     @FindBy(xpath = "//ms-add-button[contains(@tooltip,'ADD')]//button")
     public WebElement addBtn;
 
-    @FindBy(xpath = "//ms-text-field[@formcontrolname='name]//input")
+    @FindBy(xpath = "//ms-text-field[@formcontrolname='name']//input")
     public WebElement nameInput;
 
     @FindBy(xpath = "//ms-text-field[@formcontrolname='code']//input")
@@ -44,6 +44,6 @@ public class DialogContent extends Parent{
     @FindBy(xpath = "//ms-save-button[@class='ng-star-inserted']//button")
     public WebElement saveBtn;
 
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//div[contains(text(),'successfully')]")
     public WebElement successMsg;
 }
