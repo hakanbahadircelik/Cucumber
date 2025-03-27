@@ -1,4 +1,4 @@
 package Pages;
 
-public class LeftNav {
+public class LeftNav extends Parent{
 }
