@@ -12,13 +12,13 @@ public class DialogContent {
         //  owner of the page, no need to findElement anymore.
     }
 
-    @FindBy(css = " ")
+    @FindBy(xpath = "//input[@formcontrolname='username']")
     public WebElement username;
 
-    @FindBy(css = " ")
+    @FindBy(xpath = "//input[@formcontrolname='password']")
     public WebElement password;
 
-    @FindBy(css = " ")
+    @FindBy(css = "button[aria-label='LOGIN']")
     public WebElement loginBtn;
 
 }
