@@ -10,7 +10,31 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class _01_LoginSteps {
+    DialogContent dc = new DialogContent();
 
+    @Given("Navigate to Campus")
+    public void navigate_to_campus() {
+        GWD.getDriver().get("https://test.mersys.io/");
+    }
 
+    @When("Enter username and password click login button")
+    public void enter_username_and_password_click_login_button() {
+
+//        WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(20));
+//        wait.until(ExpectedConditions.visibilityOf(dc.username));
+//
+//        dc.username.sendKeys("turkeyts");
+//        dc.password.sendKeys("Techno2025.%");
+//        dc.loginBtn.click();
+
+        dc.sendKeys(dc.username, "turkeyts");
+        dc.sendKeys(dc.password, "Techno2025.%");
+        dc.click(dc.loginBtn);
+    }
+
+    @Then("User should login successfully")
+    public void user_should_login_successfully() {
+        System.out.println("web site is opened tested");
+    }
 
 }
