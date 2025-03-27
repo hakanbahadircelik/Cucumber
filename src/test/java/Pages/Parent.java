@@ -11,20 +11,16 @@ import java.time.Duration;
 
 public class Parent {
 
+    WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(20));
+
     public void myClick(WebElement element) {
-
-        WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(20));
         wait.until(ExpectedConditions.elementToBeClickable(element));
-
         scrollToElement(element);
         element.click();
     }
 
     public void mySendKeys(WebElement element, String written) {
-
-        WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(20));
         wait.until(ExpectedConditions.visibilityOf(element));
-
         scrollToElement(element);
         element.clear();
         element.sendKeys(written);
@@ -36,9 +32,7 @@ public class Parent {
     }
 
     public void verifyText(WebElement element, String txt) {
-        WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(20));
         wait.until(ExpectedConditions.visibilityOf(element));
-
         Assert.assertTrue(element.getText().toLowerCase().contains(txt.toLowerCase()));
     }
 
