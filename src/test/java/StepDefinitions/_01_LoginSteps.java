@@ -37,11 +37,7 @@ public class _01_LoginSteps {
     @Then("User should login successfully")
     public void user_should_login_successfully() {
 
-        WebDriverWait wait = new WebDriverWait(GWD.getDriver(), Duration.ofSeconds(20));
-        wait.until(ExpectedConditions.visibilityOf(dc.txtInternship));
-
-        Assert.assertTrue(dc.txtInternship.getText()
-                .toLowerCase().contains("internship"));
+        dc.verifyText(dc.txtInternship,"internship");
 
     }
 
