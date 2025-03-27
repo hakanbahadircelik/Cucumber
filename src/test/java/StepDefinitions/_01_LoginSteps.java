@@ -1,9 +1,11 @@
 package StepDefinitions;
 
+import Pages.DialogContent;
 import Utilities.GWD;
 import io.cucumber.java.en.*;
 
 public class _01_LoginSteps {
+    DialogContent dc = new DialogContent();
 
     @Given("Navigate to Campus")
     public void navigate_to_campus() {
@@ -12,8 +14,9 @@ public class _01_LoginSteps {
 
     @When("Enter username and password click login button")
     public void enter_username_and_password_click_login_button() {
-//        GWD.getDriver().findElement("username").sendKeys("turkeyts");
-//        GWD.getDriver().findElement("password").sendKeys("TechnoStudy123");
+        dc.username.sendKeys("turkeyts");
+        dc.password.sendKeys("Techno2025.%");
+        dc.loginBtn.click();
     }
 
     @Then("User should login successfully")
