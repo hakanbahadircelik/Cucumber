@@ -46,4 +46,7 @@ public class DialogContent extends Parent{
 
     @FindBy(xpath = "//div[contains(text(),'successfully')]")
     public WebElement successMsg;
+
+    @FindBy(xpath = "//ms-text-field[@formcontrolname='shortName']//input")
+    public WebElement shortNameInput;
 }
