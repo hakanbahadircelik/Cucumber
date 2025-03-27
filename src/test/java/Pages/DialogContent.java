@@ -30,4 +30,18 @@ public class DialogContent extends Parent{
     @FindBy(xpath = "//span[text()='Internship']")
     public WebElement txtInternship;
 
+    @FindBy(xpath = "")
+    public WebElement addBtn;
+
+    @FindBy(xpath = "")
+    public WebElement nameInput;
+
+    @FindBy(xpath = "")
+    public WebElement codeInput;
+
+    @FindBy(xpath = "")
+    public WebElement saveBtn;
+
+    @FindBy(xpath = "")
+    public WebElement successMsg;
 }
