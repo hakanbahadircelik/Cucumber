@@ -43,4 +43,11 @@ public class _04_CitizenShip {
     public void alreadyExistMessageShouldBeDisplayed() {
         dc.verifyContainsText(dc.alreadyExist,"already");
     }
+
+
+    @When("user delete name as {string}")
+    public void userDeleteNameAs(String name) {
+        dc.deleteItem(name);
+    }
+
 }

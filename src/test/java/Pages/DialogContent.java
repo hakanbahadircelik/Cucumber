@@ -52,4 +52,27 @@ public class DialogContent extends Parent{
 
     @FindBy(xpath = "//div[contains(text(),'already exists')]")
     public WebElement alreadyExist;
+
+    @FindBy(xpath = "//ms-search-button//button")
+    public WebElement searchButton;
+
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement deleteDialogBtn;
+
+    @FindBy(xpath = "(//ms-delete-button//button)[1]")
+    public WebElement deleteImageBtn;
+
+    public void deleteItem(String deleteName)
+    {
+        mySendKeys(searchButton,deleteName);
+        myClick(searchButton);
+
+        //sayfa yenilenen kadar bekle, arama sonuçlanana kadar bekle
+        wait.until(ExpectedConditions.elementToBeClickable(this.searchButton));
+
+        myClick(deleteImageBtn);
+        myClick(deleteDialogBtn);
+    }
+
+
 }

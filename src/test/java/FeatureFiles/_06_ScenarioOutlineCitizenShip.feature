@@ -13,6 +13,9 @@ Feature: Citizenship
     When Create a citizenship name as "<name>" short name as "<shortname>"
     Then Already exist message should be displayed
 
+    When user delete name as "<name>"
+    Then Success message should be displayed
+
     Examples:
       | name   | shortname |
       | ba1ha2 | b1b22     |
