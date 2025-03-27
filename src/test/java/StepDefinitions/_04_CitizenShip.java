@@ -4,6 +4,7 @@ import Pages.DialogContent;
 import Pages.LeftNav;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
+import org.apache.commons.lang3.RandomStringUtils;
 
 public class _04_CitizenShip {
 
@@ -20,9 +21,12 @@ public class _04_CitizenShip {
 
     @When("Create a citizenship")
     public void createACitizenship() {
+        String citizenshipName = RandomStringUtils.randomAlphanumeric(8);
+        String citizenshipShortCode = RandomStringUtils.randomAlphanumeric(4);
+
         dc.myClick(dc.addBtn);
-        dc.mySendKeys(dc.nameInput,"tbilisi");
-        dc.mySendKeys(dc.shortNameInput,"tbl");
+        dc.mySendKeys(dc.nameInput, citizenshipName);
+        dc.mySendKeys(dc.shortNameInput, citizenshipShortCode);
         dc.myClick(dc.saveBtn);
     }
 
