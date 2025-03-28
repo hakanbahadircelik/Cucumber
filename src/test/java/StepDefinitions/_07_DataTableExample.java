@@ -27,6 +27,15 @@ public class _07_DataTableExample {
             System.out.println("user = " + user);
     }
 
+    @And("Write username and Password as DataTable")
+    public void writeUsernameAndPasswordAsDataTable(DataTable usersAndPassword) {
+        List<List<String>> listUserAndPasswords = usersAndPassword.asLists(String.class);
 
+        for (int i = 0; i < listUserAndPasswords.size(); i++) {
+            System.out.println("ListItems = " + listUserAndPasswords.get(i).get(0) + " "
+                                              + listUserAndPasswords.get(i).get(1));
+        }
+
+    }
 
 }
