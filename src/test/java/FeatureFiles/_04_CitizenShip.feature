@@ -1,5 +1,6 @@
 Feature: Citizenship
 
+  @Regression
   Scenario: Citizenship Registration
     Given Navigate to Campus
     When Enter username and password click login button
