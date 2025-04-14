@@ -18,7 +18,7 @@ Feature: DataTable Functionality
     | nameInput  | ba0ha001 |
     | codeInput  | i1234 |
 
-    And click on the element in Dialog
+    And Click on the element in Dialog
     | saveBtn |
 
     Then Success message should be displayed

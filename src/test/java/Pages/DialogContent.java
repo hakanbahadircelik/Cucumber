@@ -78,6 +78,8 @@ public class DialogContent extends Parent{
         switch (strElement){
             case "addBtn": return this.addBtn;
             case "saveBtn": return this.saveBtn;
+            case "nameInput": return this.nameInput;
+            case "codeInput": return this.codeInput;
         }
 
         return null;

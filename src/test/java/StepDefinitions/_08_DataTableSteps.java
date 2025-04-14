@@ -13,7 +13,7 @@ public class _08_DataTableSteps {
     LeftNav ln=new LeftNav();
     DialogContent dc=new DialogContent();
 
-    @And("Click on the Element in LeftNav")
+    @And("Click on the element in LeftNav")
     public void clickOnTheElementInLeftNav(DataTable dtLinkler) {
         List<String> linkler=dtLinkler.asList();
 
@@ -23,7 +23,7 @@ public class _08_DataTableSteps {
 
     }
 
-    @And("Click on the Element in Dialog")
+    @And("Click on the element in Dialog")
     public void clickOnTheElementInDialog(DataTable dtButonlar) {
         List<String> butonlar=dtButonlar.asList();
 
@@ -44,7 +44,7 @@ public class _08_DataTableSteps {
 
     }
 
-    @And("User delete the element from dialog")
+    @And("User delete item from Dialog Content")
     public void userDeleteTheElementFromDialog(DataTable dtSilinecekler) {
         List<String> silinecekler=dtSilinecekler.asList();
 
