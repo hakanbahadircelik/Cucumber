@@ -28,7 +28,7 @@ Feature: DataTable Functionality
 
               #####
 
-    Scenario: Create Nationality
+  Scenario: Create Nationality
     And Click on the element in LeftNav
       | setup      |
       | parameters |
