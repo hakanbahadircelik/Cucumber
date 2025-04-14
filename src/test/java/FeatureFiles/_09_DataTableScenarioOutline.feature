@@ -24,7 +24,7 @@ Feature: DataTable Functionality
     Then Success message should be displayed
 
     And User delete item from Dialog Content
-      | ba0ha001 |
+      | <name> |
 
     Examples:
       | name    | code   |
