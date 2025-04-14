@@ -25,3 +25,27 @@ Feature: DataTable Functionality
 
     And User delete item from Dialog Content
     | ba0ha001 |
+
+              #####
+
+    Scenario: Create Nationality
+    And Click on the element in LeftNav
+      | setup      |
+      | parameters |
+      | nationalities  |
+
+    And Click on the element in Dialog
+      | addButton  |
+
+    And User sending the keys in Dialog
+      | nameInput  | bahaNat1 |
+
+    And Click on the element in Dialog
+      | saveBtn |
+
+    Then Success message should be displayed
+
+    And User delete item from Dialog Content
+      | ba0ha001 |
+
+    Then Success message should be displayed
