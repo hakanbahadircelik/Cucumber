@@ -8,5 +8,5 @@ import io.cucumber.testng.CucumberOptions;
         features = {"src/test/java/FeatureFiles"},
         glue = {"StepDefinitions"}
 )
-public class _05_Regression extends AbstractTestNGCucumberTests {
+public class _05_TestRunnerRegression extends AbstractTestNGCucumberTests {
 }
