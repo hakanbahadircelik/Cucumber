@@ -10,20 +10,25 @@ import java.util.Locale;
 
 public class GWD {
 
-    private static WebDriver driver;
+    private static ThreadLocal<WebDriver> threadDriver = new ThreadLocal<>();
+
+    // threadDriver.get() -> take driver from the thread(boru)
+    // threadDriver.set(driver) -> set a driver to the thread(boru)
 
     public static WebDriver getDriver() {
 
         Locale.setDefault(new Locale("EN"));
-        System.setProperty("user.language","EN");
+        System.setProperty("user.language", "EN");
 
-        if (driver == null) {  //  work 1 time at First
-            driver = new ChromeDriver();
-            driver.manage().window().maximize();
-            driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20)); // loading page wait till 30sec, or ERROR
+        if (threadDriver.get() == null) {  //  work 1 time at First
+
+            //  with name of the browser, create a switch and set it.
+            threadDriver.set(new ChromeDriver());
+            threadDriver.get().manage().window().maximize();
+            threadDriver.get().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20)); // loading page wait till 30sec, or ERROR
         }
 
-        return driver;
+        return threadDriver.get();
     }
 
     public static void quitDriver() {
@@ -36,9 +41,12 @@ public class GWD {
         }
 
         // close driver
-        if (driver != null) {  //  work 1 time at First
-            driver.quit();
+        if (threadDriver.get() != null) {  //  work 1 time at First
+            threadDriver.get().quit();
+
+            WebDriver driver = threadDriver.get();
             driver = null;
+            threadDriver.set(driver);
         }
 
 
