@@ -5,12 +5,17 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.time.LocalDate;
+import java.util.Locale;
 
 public class GWD {
 
     private static WebDriver driver;
 
     public static WebDriver getDriver() {
+
+        Locale.setDefault(new Locale("EN"));
+        System.setProperty("user.language","EN");
 
         if (driver == null) {  //  work 1 time at First
             driver = new ChromeDriver();
