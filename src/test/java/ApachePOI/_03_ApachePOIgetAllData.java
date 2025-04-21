@@ -30,6 +30,8 @@ public class _03_ApachePOIgetAllData {
             System.out.println();
         }
 
+        System.out.println("**********************************************************");
+
         // 2. WAY
         for (int i = 0; i < sheet.getPhysicalNumberOfRows(); i++) {
 
