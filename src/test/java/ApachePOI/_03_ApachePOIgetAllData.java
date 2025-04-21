@@ -17,6 +17,7 @@ public class _03_ApachePOIgetAllData {
         // how many rows in the sheet
         int rowCount = sheet.getPhysicalNumberOfRows();
 
+        // 1. WAY
         for (int i = 0; i < rowCount; i++) {
 
             Row row = sheet.getRow(i);
@@ -26,6 +27,15 @@ public class _03_ApachePOIgetAllData {
                 Cell cell = row.getCell(j);
                 System.out.print(cell+"\t");
             }
+            System.out.println();
+        }
+
+        // 2. WAY
+        for (int i = 0; i < sheet.getPhysicalNumberOfRows(); i++) {
+
+            for (int j = 0; j < sheet.getRow(i).getPhysicalNumberOfCells(); j++)
+                System.out.print(sheet.getRow(i).getCell(j)+"\t");
+
             System.out.println();
         }
 
