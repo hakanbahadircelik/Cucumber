@@ -12,6 +12,7 @@ import java.sql.Statement;
 public class JDBCParent {
 
     public static Connection connection;
+    public static Statement statement;
 
     @BeforeClass
     public void DBConnectionOpen() throws SQLException {
@@ -19,8 +20,8 @@ public class JDBCParent {
         String username = "admin";
         String password = "Techno24Study.%=";
 
-        Connection connection = DriverManager.getConnection(hostUrl, username, password);
-        Statement statement = connection.createStatement();
+        connection = DriverManager.getConnection(hostUrl, username, password);
+        statement = connection.createStatement();
     }
 
     @AfterClass
