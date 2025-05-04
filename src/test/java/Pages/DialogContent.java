@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import java.time.Duration;
+import java.util.List;
 
 public class DialogContent extends Parent{
 
@@ -61,6 +62,9 @@ public class DialogContent extends Parent{
 
     @FindBy(xpath = "(//ms-delete-button//button)[1]")
     public WebElement deleteImageBtn;
+
+    @FindBy(xpath = "//tbody//tr//td[2]")
+    public List<WebElement> nameList;
 
     public void deleteItem(String deleteName)
     {

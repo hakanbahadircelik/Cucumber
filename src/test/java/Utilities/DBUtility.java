@@ -6,47 +6,57 @@ import java.util.List;
 
 public class DBUtility {
 
-    public static Connection connection;
+    private static Connection connection;
     public static Statement statement;
 
-    public List<List<String>> getListData(String sql) throws SQLException {
+    public static List<List<String>> getListData(String sorgu)
+    {
         DBConnectionOpen();
 
-        List<List<String>> table = new ArrayList<>();
+        List<List<String>> tablo=new ArrayList<>();
 
         try {
-            ResultSet resultSet = statement.executeQuery(sql);
-            ResultSetMetaData resultSetMetaData = resultSet.getMetaData();
+            ResultSet rs = statement.executeQuery(sorgu);
+            ResultSetMetaData rsmd=rs.getMetaData();
 
-            while (resultSet.next()){
-                List<String> column = new ArrayList<>();
-                for (int i = 1; i < resultSetMetaData.getColumnCount(); i++) {
-                    column.add(resultSet.getString(i));
-                }
+            while (rs.next())
+            {
+                ArrayList<String> satir=new ArrayList<>();
+                for (int i = 1; i <= rsmd.getColumnCount(); i++)
+                    satir.add(rs.getString(i)); // satırları doldur
 
-                table.add(column);
+                tablo.add(satir); //ana tabloya ekle
             }
-
         }
-        catch (Exception ex) {
+        catch (Exception ex)
+        {
             System.out.println(ex.getMessage());
         }
 
         DBConnectionClose();
-        return table;
+        return tablo;
     }
 
-    public void DBConnectionOpen() throws SQLException {
-        String hostUrl = "jdbc:mysql://demo.mersys.io:33906/sakila";
+
+    public static void DBConnectionOpen() {
+        String url = "jdbc:mysql://demo.mersys.io:33906/sakila";
         String username = "admin";
         String password = "Techno24Study.%=";
 
-        connection = DriverManager.getConnection(hostUrl, username, password);
-        statement = connection.createStatement();
+        try {
+            connection = DriverManager.getConnection(url, username, password);
+            statement = connection.createStatement();
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
     }
 
-    public void DBConnectionClose() throws SQLException {
-        connection.close();
+    public static void DBConnectionClose() {
+        try {
+            connection.close();
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
     }
 
 }
