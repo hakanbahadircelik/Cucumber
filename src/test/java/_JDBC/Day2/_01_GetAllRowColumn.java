@@ -78,7 +78,6 @@ public class _01_GetAllRowColumn extends JDBCParent {
             System.out.println(ex.getMessage());
         }
 
-
         return table;
     }
 
